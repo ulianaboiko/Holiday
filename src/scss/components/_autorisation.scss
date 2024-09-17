@@ -1,0 +1,15 @@
+.autorisation {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.autorisation__link {
+  display: block;
+  padding: 18px 15px;
+  border-radius: 25px;
+  border: 2px solid $color-text-primary;
+  border-color: transparent;
+}
+.autorisation__link--active {
+  border-color: $color-text-primary;
+}

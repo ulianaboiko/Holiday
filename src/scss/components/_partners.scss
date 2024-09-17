@@ -1,0 +1,106 @@
+.partners {
+  padding: 60px 0 55px;
+}
+.partners__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partners__title {
+  text-align: center;
+  font-size: 22px;
+  color: $color-text-secondary;
+  margin-bottom: 15px;
+}
+.partners__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+.partner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.partner__photo {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 35px;
+    bottom: 0;
+    right: 0;
+    border: 4px solid $color-text-primary;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+$partners: (
+  "bradley": "#ff4e50",
+  "lucas": "#ffa507",
+  "heather": " #1cd7ad",
+  "anna": "#4e73db",
+);
+@each $name, $color in $partners {
+  .partner__photo--#{$name}::after {
+    background-color: #{$color};
+    background-image: url(../img/partners/#{$name}/icon.svg);
+  }
+}
+.partner__name {
+  color: $color-text-secondary;
+}
+.partner__text {
+  font-family: $font-secondary;
+  font-weight: 300;
+  color: $color-text-tetriary;
+}
+.partners__button {
+  padding: 12px 60px;
+  background-color: $color-text-primary;
+  color: $color-button;
+  transition-property: color, background-color;
+  transition: 0.5s ease;
+  &:hover {
+    background-color: $color-button;
+    color: $color-text-primary;
+  }
+}
+@media (min-width: 768px) {
+  .partners {
+    padding: 70px 0 40px;
+  }
+  .partners__container {
+    max-width: 500px;
+  }
+  .partners__title {
+    margin-bottom: 30px;
+  }
+  .partners__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: 50px;
+    row-gap: 55px;
+    margin-bottom: 40px;
+  }
+  .partners__item {
+    flex-basis: calc((100% - 50px) / 2);
+  }
+}
+@media (min-width: 1440px) {
+  .partners__container {
+    max-width: 915px;
+  }
+  .partners__list {
+    column-gap: 35px;
+  }
+  .partners__item {
+    flex-basis: calc((100% - 105px) / 4);
+  }
+}

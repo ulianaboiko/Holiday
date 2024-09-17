@@ -1,0 +1,27 @@
+.header {
+  position: relative;
+}
+.header__container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 112px;
+}
+@media (min-width: 768px) {
+  .header__container {
+    top: 35px;
+    min-width: 670px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 100px;
+  }
+}
+@media (min-width: 1440px) {
+  .header__container {
+    min-width: 940px;
+  }
+}
